@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var monk = require('monk');
-var db = monk('localhost:27017/vidzy');
+var db = monk('localhost:27017/contactcard');
 
 router.get('/', function(req, res) {
   var collection = db.get('cards');
@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
   }, function(err, card) {
     if (err) throw err;
 
-    res.json(cards);
+    res.json(card);
   });
 });
 
