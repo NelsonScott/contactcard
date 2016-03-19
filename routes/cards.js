@@ -28,4 +28,16 @@ router.post('/', function(req, res) {
   });
 });
 
+router.delete('/:id', function(req, res) {
+  var collection = db.get('cards');
+
+  collection.remove({
+    _id: req.params.id
+  }, function(err, card) {
+    if (err) throw err;
+
+    res.json(card);
+  });
+});
+
 module.exports = router;
