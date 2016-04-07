@@ -9,6 +9,10 @@ app.config(['$routeProvider', function($routeProvider) {
     .when('/new-card', {
       templateUrl: 'partials/new-card.html',
       controller: 'newCardCtrl'
+    })
+    .when('/cards/:id', {
+      templateUrl: 'partials/card.html',
+      controller: 'cardCtrl'
     });
 }]);
 
@@ -28,4 +32,13 @@ app.controller('newCardCtrl', ['$scope', '$resource', '$location',
         console.log('Successful save.');
       });
     };
+  }]);
+
+app.controller('cardCtrl', ['$scope', '$resource', '$location', '$routeParams',
+  function($scope, $resource, $location, $routeParams) {
+    var Cards = $resource('api/cards/:id');
+
+    Cards.get({ id: $routeParams.id }, function(card) {
+      $scope.card = card;
+    });
   }]);
