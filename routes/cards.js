@@ -14,6 +14,16 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/:id', function(req, res) {
+  var collection = db.get('cards');
+
+  collection.findById(req.params.id, function(err, card) {
+    if (err) throw err;
+
+    res.json(card);
+  });
+});
+
 router.post('/', function(req, res) {
   var collection = db.get('cards');
   var body = req.body;
