@@ -11,10 +11,16 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'newCardCtrl'
     })
     .when('/cards/:id', {
-      templateUrl: 'partials/card.html',
+      templateUrl: 'partials/card-view.html',
       controller: 'cardCtrl'
     });
 }]);
+
+app.directive('card', function() {
+  return {
+    templateUrl: 'partials/card.html'
+  };
+});
 
 app.controller('homeCtrl', ['$scope', '$resource',
   function($scope, $resource, $location) {
