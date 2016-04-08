@@ -28,6 +28,15 @@ a {
   font-size: 18px;
 }
 
+.github-icon {
+  width: 30px;
+}
+
+.card-icon-text {
+  display: inline;
+  vertical-align: middle;
+}
+
 .panel-profile .panel-heading {
   height: 150px;
   background-size: cover;

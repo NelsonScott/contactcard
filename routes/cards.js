@@ -30,7 +30,8 @@ router.post('/', function(req, res) {
 
   collection.insert({
     name: body.name,
-    email: body.email
+    email: body.email,
+    github: body.github
   }, function(err, card) {
     if (err) throw err;
 

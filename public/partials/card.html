@@ -3,15 +3,16 @@
   <div class="panel panel-default panel-profile m-b-0">
     <div class="panel-heading" style="background-image: url(//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/insta-1.jpg?18166140152513922339);"></div>
     <div class="panel-body text-center">
-      <img class="panel-profile-img" src="//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/avatar-mdo.jpg?18166140152513922339">
+      <img class="panel-profile-img" src="https://en.gravatar.com/userimage/77556751/d95db71920a0ba166228213142526731.png?size=200">
       <h5 class="panel-title">{{ card.name }}</h5>
       <p class="m-b">
         <a class="card-email" href="mailto:{{ card.email }}" target="_blank">
           {{ card.email }}
         </a>
       </p>
-      <a href="{{ card.github }}" target="_blank" class="card-github">
-        GitHub
+      <a href="https://github.com/{{ card.github }}" target="_blank" class="card-github">
+        <img class="github-icon" src="https://s3-us-west-2.amazonaws.com/contact-card/github.png" alt="github"/>
+        <p class="card-icon-text">nelsonscott</p>
       </a>
     </div>
   </div>
