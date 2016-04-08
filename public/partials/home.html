@@ -2,18 +2,20 @@
 
 <div class="col-md-4 m-b-lg">
   <div class="panel panel-default panel-profile m-b-0" ng-repeat="card in cards">
-    <div class="panel-heading" style="background-image: url(//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/insta-1.jpg?18166140152513922339);"></div>
-    <div class="panel-body text-center">
-      <img class="panel-profile-img" src="//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/avatar-mdo.jpg?18166140152513922339">
-      <h5 class="panel-title">{{ card.name }}</h5>
-      <p class="m-b">
-        <a class="card-email" href="mailto:{{ card.email }}" target="_blank">
-          {{ card.email }}
+    <a href="#/cards/{{ card._id }}">
+      <div class="panel-heading" style="background-image: url(//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/insta-1.jpg?18166140152513922339);"></div>
+      <div class="panel-body text-center">
+        <img class="panel-profile-img" src="//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/avatar-mdo.jpg?18166140152513922339">
+        <h5 class="panel-title">{{ card.name }}</h5>
+        <p class="m-b">
+          <a class="card-email" href="mailto:{{ card.email }}" target="_blank">
+            {{ card.email }}
+          </a>
+        </p>
+        <a href="{{ card.github }}" target="_blank" class="card-github">
+          GitHub
         </a>
-      </p>
-      <a href="{{ card.github }}" target="_blank" class="card-github">
-        GitHub
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
