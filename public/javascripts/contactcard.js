@@ -47,4 +47,10 @@ app.controller('cardCtrl', ['$scope', '$resource', '$location', '$routeParams',
     Cards.get({ id: $routeParams.id }, function(card) {
       $scope.card = card;
     });
+
+    $scope.delete = function() {
+      Cards.delete({ id: $scope.card._id }, function(card){
+        $location.path('/');
+      });
+    };
   }]);
