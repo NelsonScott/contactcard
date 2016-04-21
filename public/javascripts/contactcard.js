@@ -35,7 +35,7 @@ app.controller('newCardCtrl', ['$scope', '$resource', '$location',
     $scope.save = function () {
       var Cards = $resource('/api/cards');
       Cards.save($scope.card, function() {
-        console.log('Successful save.');
+        $scope.success = true;
       });
     };
   }]);
