@@ -1,0 +1,30 @@
+.panel-profile-img {
+  max-width: 100px;
+  margin-top: -70px;
+  margin-bottom: 5px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.panel-profile .panel-heading {
+  height: 150px;
+  background-size: cover;
+}
+
+.card-email {
+  font-size: 16px;
+}
+
+.card-github {
+  font-size: 18px;
+}
+
+.card-icon-text {
+  display: inline;
+  vertical-align: middle;
+}
+
+.github-icon {
+  width: 30px;
+}
