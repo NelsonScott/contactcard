@@ -31,6 +31,8 @@ router.post('/', function(req, res) {
 
   collection.insert({
     name: body.name,
+    profileImageUrl: body.profileImageUrl,
+    backgroundImageUrl: body.backgroundImageUrl,
     email: body.email,
     github: body.github
   }, function(err, card) {
