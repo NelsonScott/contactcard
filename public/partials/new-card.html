@@ -6,13 +6,23 @@
   </div>
 
   <div class="form-group">
+    <label>Profile Image URL</label>
+    <input type="text" class="form-control" placeholder="Profile Image" ng-model="card.profileImageUrl">
+  </div>
+
+  <div class="form-group">
+    <label>Background Image URL</label>
+    <input type="text" class="form-control" placeholder="Background Image" ng-model="card.backgroundImageUrl">
+  </div>
+
+  <div class="form-group">
     <label>Email</label>
-    <input type="email" class="form-control" placeholder="email" ng-model="card.email">
+    <input type="text" class="form-control" placeholder="email" ng-model="card.email">
   </div>
 
   <div class="form-group">
     <label>github</label>
-    <input type="github" class="form-control" placeholder="github" ng-model="card.github">
+    <input type="text" class="form-control" placeholder="github" ng-model="card.github">
   </div>
   <input type="button" class="btn btn-primary" value="Save" ng-click="save()">
 </form>

@@ -4,11 +4,11 @@
   </a>
   <div class="panel panel-default panel-profile m-b-0">
     <a href="#/cards/{{ card._id }}">
-      <div class="panel-heading" style="background-image: url(//cdn.shopify.com/s/files/1/0691/5403/t/121/assets/insta-1.jpg?18166140152513922339);"></div>
+      <div class="panel-heading" style="background-image: url({{ card.backgroundImageUrl }});"></div>
     </a>
     <div class="panel-body text-center">
       <a href="#/cards/{{ card._id }}">
-        <img class="panel-profile-img" src="https://en.gravatar.com/userimage/77556751/d95db71920a0ba166228213142526731.png?size=200">
+        <img class="panel-profile-img" src="{{ card.profileImageUrl }}">
       </a>
       <h5 class="panel-title">{{ card.name }}</h5>
       <p class="m-b">
