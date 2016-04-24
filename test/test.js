@@ -8,6 +8,7 @@ var should = chai.should();
 var monk = require('monk');
 var db = monk('localhost:27017/test');
 var cards = db.get('cards');
+var faker = require('faker');
 
 describe('Cards', function() {
 
@@ -19,17 +20,44 @@ describe('Cards', function() {
   });
 
   it('Should list all cards on /api/cards GET', function(done) {
-    chai.request(app).
-    get('/api/cards').
-    end(function(err, res) {
-      res.should.have.status(200);
-      res.should.be.json;
-      res.body.should.be.a('array');
-      done();
+    firstCard = {
+      name: faker.name.findName(),
+      email: faker.internet.email(),
+      github: faker.internet.userName()
+    };
+
+    secondCard = {
+      name: faker.name.findName(),
+      email: faker.internet.email(),
+      github: faker.internet.userName()
+    };
+
+    cards.insert([
+      {
+        name: firstCard.name,
+        email: firstCard.email,
+        github: firstCard.github
+      },
+      {
+        name: secondCard.name,
+        email: secondCard.email,
+        github: secondCard.github
+      }
+    ], function(err, res) {
+      chai.request(app).
+      get('/api/cards').
+      end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('array');
+        res.body[0].name.should.equal(firstCard.name);
+        res.body[1].name.should.equal(secondCard.name);
+        done();
+      });
     });
   });
 
-  it('Should list one cards on /api/cards/:id GET', function(done) {
+  it('Should list one card on /api/cards/:id GET', function(done) {
     cards.insert({
       name: 'Test',
       email: 'test@example.com',
