@@ -19,31 +19,21 @@ describe('Cards', function() {
     done();
   });
 
+  var newCardData = function() {
+    return {
+      name: faker.name.findName(),
+      profileImageUrl: faker.internet.url(),
+      backgroundImageUrl: faker.internet.url(),
+      email: faker.internet.email(),
+      github: faker.internet.userName()
+    };
+  };
+
   it('Should list all cards on /api/cards GET', function(done) {
-    firstCard = {
-      name: faker.name.findName(),
-      email: faker.internet.email(),
-      github: faker.internet.userName()
-    };
+    var firstCard = newCardData();
+    var secondCard = newCardData();
 
-    secondCard = {
-      name: faker.name.findName(),
-      email: faker.internet.email(),
-      github: faker.internet.userName()
-    };
-
-    cards.insert([
-      {
-        name: firstCard.name,
-        email: firstCard.email,
-        github: firstCard.github
-      },
-      {
-        name: secondCard.name,
-        email: secondCard.email,
-        github: secondCard.github
-      }
-    ], function(err, res) {
+    cards.insert([firstCard, secondCard], function(err, res) {
       chai.request(app).
       get('/api/cards').
       end(function(err, res) {
@@ -58,11 +48,8 @@ describe('Cards', function() {
   });
 
   it('Should list one card on /api/cards/:id GET', function(done) {
-    cards.insert({
-      name: 'Test',
-      email: 'test@example.com',
-      github: 'testaccount'
-    }, function(err, card) {
+    var card = newCardData();
+    cards.insert(card, function(err, card) {
       if (err) throw err;
 
       chai.request(app).
@@ -70,38 +57,32 @@ describe('Cards', function() {
       end(function(err, res) {
         res.should.have.status(200);
         res.should.be.json;
-        res.body.name.should.equal('Test');
-        res.body.email.should.equal('test@example.com');
-        res.body.github.should.equal('testaccount');
+        res.body.name.should.equal(card.name);
+        res.body.email.should.equal(card.email);
+        res.body.github.should.equal(card.github);
         done();
       });
     });
   });
 
   it('should add one card on /api/cards POST', function(done) {
+    var card = newCardData();
     chai.request(app).
     post('/api/cards').
-    send({
-      'name': 'Scott',
-      'email': 'scott@scottdavidnelson.io',
-      'github': 'nelsonscott'
-    }).
+    send(card).
     end(function(err, res) {
       res.should.have.status(200);
       res.should.be.json;
-      res.body.name.should.equal('Scott');
-      res.body.email.should.equal('scott@scottdavidnelson.io');
-      res.body.github.should.equal('nelsonscott');
+      res.body.name.should.equal(card.name);
+      res.body.email.should.equal(card.email);
+      res.body.github.should.equal(card.github);
       done();
     });
   });
 
   it('should delete a card on /api/card/:id DELETE', function(done) {
-    cards.insert({
-      name: 'Test Delete',
-      email: 'testdelete@example.com',
-      github: 'testdeleteaccount'
-    }, function(err, card) {
+    var card = newCardData();
+    cards.insert(card, function(err, card) {
       if (err) throw err;
 
       chai.request(app).
