@@ -16,11 +16,12 @@
   font-size: 16px;
 }
 
-.card-github {
-  font-size: 18px;
+.card-icon-link:hover {
+  text-decoration: none;
 }
 
 .card-icon-text {
+  font-size: 18px;
   display: inline;
   vertical-align: middle;
 }

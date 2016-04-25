@@ -34,7 +34,8 @@ router.post('/', function(req, res) {
     profileImageUrl: body.profileImageUrl,
     backgroundImageUrl: body.backgroundImageUrl,
     email: body.email,
-    github: body.github
+    github: body.github,
+    linkedin: body.linkedin
   }, function(err, card) {
     if (err) throw err;
 

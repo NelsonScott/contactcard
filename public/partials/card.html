@@ -11,15 +11,26 @@
         <img class="panel-profile-img" src="{{ card.profileImageUrl }}">
       </a>
       <h5 class="panel-title">{{ card.name }}</h5>
+
       <p class="m-b">
         <a class="card-email" href="mailto:{{ card.email }}" target="_blank">
-          {{ card.email }}
+          <p class="card-icon-text">{{ card.email }}</p>
         </a>
       </p>
-      <a href="https://github.com/{{ card.github }}" target="_blank" class="card-github">
-        <img class="github-icon" src="images/icons/github.png" alt="github"/>
-        <p class="card-icon-text">nelsonscott</p>
-      </a>
+
+      <div class="card-icon-container">
+        <a class="card-icon-link" href="https://github.com/{{ card.github }}" target="_blank">
+          <img src="images/icons/github.png" alt="github"/>
+          <p class="card-icon-text">{{ card.github }}</p>
+        </a>
+      </div>
+
+      <div class="card-icon-container">
+        <a class="card-icon-link" href="https://www.linkedin.com/in/{{ card.linkedin }}" target="_blank">
+          <img src="images/icons/linkedin.png" alt="linkedin"/>
+          <p class="card-icon-text">{{ card.linkedin }}</p>
+        </a>
+      </div>
     </div>
   </div>
 </div>
