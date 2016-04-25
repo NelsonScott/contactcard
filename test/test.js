@@ -25,7 +25,8 @@ describe('Cards', function() {
       profileImageUrl: faker.internet.url(),
       backgroundImageUrl: faker.internet.url(),
       email: faker.internet.email(),
-      github: faker.internet.userName()
+      github: faker.internet.userName(),
+      linkedin: faker.internet.userName()
     };
   };
 
