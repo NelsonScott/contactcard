@@ -12,8 +12,17 @@
   background-size: cover;
 }
 
-.card-email {
-  font-size: 16px;
+.panel-profile .panel-title {
+  font-size: 21px
+}
+
+.card-icons-container {
+  padding-top: 15px;
+}
+
+.card-icon-container {
+  display: inline;
+  padding-right: 15px;
 }
 
 .card-icon-link:hover {

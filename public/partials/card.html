@@ -12,25 +12,32 @@
       </a>
       <h5 class="panel-title">{{ card.name }}</h5>
 
-      <p class="m-b">
-        <a class="card-email" href="mailto:{{ card.email }}" target="_blank">
-          <p class="card-icon-text">{{ card.email }}</p>
-        </a>
-      </p>
+      <div class="card-icons-container">
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <img src="images/icons/gmail.png" alt="gmail"/>
+          </a>
+        </div>
 
-      <div class="card-icon-container">
-        <a class="card-icon-link" href="https://github.com/{{ card.github }}" target="_blank">
-          <img src="images/icons/github.png" alt="github"/>
-          <p class="card-icon-text">{{ card.github }}</p>
-        </a>
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="https://github.com/{{ card.github }}" target="_blank">
+            <img src="images/icons/github.png" alt="github"/>
+          </a>
+        </div>
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="https://www.linkedin.com/in/{{ card.linkedin }}" target="_blank">
+            <img src="images/icons/linkedin.png" alt="linkedin"/>
+          </a>
+        </div>
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <img src="images/icons/home.png" alt="home"/>
+          </a>
+        </div>
       </div>
 
-      <div class="card-icon-container">
-        <a class="card-icon-link" href="https://www.linkedin.com/in/{{ card.linkedin }}" target="_blank">
-          <img src="images/icons/linkedin.png" alt="linkedin"/>
-          <p class="card-icon-text">{{ card.linkedin }}</p>
-        </a>
-      </div>
     </div>
   </div>
 </div>
