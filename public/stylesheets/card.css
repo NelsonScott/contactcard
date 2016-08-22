@@ -1,5 +1,5 @@
 .panel-profile-img {
-  max-width: 100px;
+  max-width: 125px;
   margin-top: -70px;
   margin-bottom: 5px;
   border: 3px solid #fff;
@@ -13,7 +13,23 @@
 }
 
 .panel-profile .panel-title {
-  font-size: 21px
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.panel-profile .panel-subtitle {
+  color: #aaa;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.card-break {
+  margin-top: 30px;
+  width: 40%;
+  margin-bottom: 30px;
 }
 
 .card-icons-container {
@@ -23,6 +39,11 @@
 .card-icon-container {
   display: inline;
   padding-right: 15px;
+}
+
+.card-icon-link {
+  color: #696969;
+  text-decoration: none;
 }
 
 .card-icon-link:hover {

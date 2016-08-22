@@ -11,9 +11,15 @@
         <img class="panel-profile-img" src="{{ card.profileImageUrl }}">
       </a>
       <h5 class="panel-title">{{ card.name }}</h5>
+      <h5 class="panel-subtitle">Developer</h5>
 
+      <hr class="card-break"></hr>
+
+      <p>
+        I sell propane and propane accessories.
+      </p>
       <div class="card-icons-container">
-        <div class="card-icon-container">
+        <!-- <div class="card-icon-container">
           <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
             <img src="images/icons/gmail.png" alt="gmail"/>
           </a>
@@ -34,6 +40,24 @@
         <div class="card-icon-container">
           <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
             <img src="images/icons/home.png" alt="home"/>
+          </a>
+        </div> -->
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
           </a>
         </div>
       </div>
