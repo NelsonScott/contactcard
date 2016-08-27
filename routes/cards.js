@@ -31,6 +31,7 @@ router.post('/', function(req, res) {
 
   collection.insert({
     name: body.name,
+    description: body.description,
     profileImageUrl: body.profileImageUrl,
     backgroundImageUrl: body.backgroundImageUrl,
     email: body.email,

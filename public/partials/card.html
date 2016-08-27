@@ -16,7 +16,7 @@
       <hr class="card-break"></hr>
 
       <p>
-        I sell propane and propane accessories.
+        {{ card.description }}
       </p>
 
       <div class="card-icons-container">
@@ -32,8 +32,17 @@
           </a>
         </div>
 
+      </div>
+
+      <div class="card-icons-container">
         <div class="card-icon-container">
-          <a class="card-icon-link" href="https://www.linkedin.com/in/{{card.linkedin }}" target="_blank">
+          <a class="card-icon-link" href="mailto:{{ card.email }}" target="_blank">
+            <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="card-icon-container">
+          <a class="card-icon-link" href="https://www.linkedin.com/in/{{ card.linkedin }}" target="_blank">
             <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
           </a>
         </div>
